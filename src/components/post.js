@@ -16,24 +16,23 @@ const Post = ({ post }) => {
         resizeMode="cover"
       />
 
-      <Text style={styles.bedText} numberOfLines={2}>
-        1 bed <Dot /> 1 bedroom
+      <Text style={styles.bedText} >
+        {post.bed} bed <Dot /> {post.bedroom} bedroom
       </Text>
 
-      <Text style={styles.description}>
-        Entire flat <Dot /> Puerto de la Cruz Bonito estudio con vistas en el
-        Taor...
+      <Text style={styles.description} numberOfLines={2}>
+        {post.type} <Dot /> {post.title}
       </Text>
 
       <Text style={styles.textWrapper}>
-        <Text style={styles.oldPrice}>$43 </Text>
-        <Text style={styles.newPrice}>$36</Text> / night
+        <Text style={styles.oldPrice}>${post.oldPrice} </Text>
+        <Text style={styles.newPrice}>${post.newPrice}</Text> / night
       </Text>
 
       <Text
         style={styles.totalPrice}
       >
-        $247 total
+        ${post.totalPrice} total
       </Text>
 
       <Heart style={styles.heart} />
