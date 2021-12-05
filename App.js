@@ -4,7 +4,9 @@ import { Text, View, SafeAreaView, StyleSheet } from "react-native";
 // import Home from "./src/components/home";
 // import Post from "./src/components/post";
 // import SearchResults from "./src/screens/searchResults";
-import SearchLocation from "./src/screens/searchLocation";
+// import SearchLocation from "./src/screens/searchLocation";
+
+import Guests from "./src/screens/guests";
 
 // import Feed from "./src/utils/feed";
 
@@ -16,8 +18,9 @@ export default function App() {
       {/* <Home /> */}
       {/* <Post post={post1} /> */}
       {/* <SearchResults /> */}
+      {/* <SearchLocation /> */}
 
-      <SearchLocation />
+      <Guests />
     </SafeAreaView>
   );
 }
