@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 import { colors } from "../../assets/colors/colors";
+
 
 const Guests = (props) => {
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
+  const navigation = useNavigation()
 
   return (
     <View style={styles.container}>
@@ -81,10 +85,15 @@ const Guests = (props) => {
       </View>
 
       <Pressable
-        onPress={() => console.warn("Search bar pressed!")}
+        onPress={() => navigation.navigate("Home", {
+          screen: "Explore",
+          params: {
+            screen: "Results"
+          }
+        })}
         style={styles.searchBtn}
       >
-        <Text style={{ fontSize: 16, fontWeight: "700" }}>Search</Text>
+        <Text style={{ fontSize: 16, fontWeight: "700", color: colors.white }}>Search</Text>
       </Pressable>
     </View>
   );
@@ -134,9 +143,9 @@ const styles = StyleSheet.create({
   searchBtn: {
     height: 40,
     width: "100%",
-    backgroundColor: colors.lightGray,
+    backgroundColor: colors.orange,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 20,
+    borderRadius: 5,
   },
 });
