@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TextInput, FlatList, StyleSheet } from "react-native";
 
 import search from "../utils/search";
 import Result from "../components/result";
 
 const SearchLocation = (props) => {
+  const [input, setInput] = useState("");
+
   return (
     <View style={styles.container}>
       <View style={styles.inputWrapper}>
-        <TextInput style={styles.input} placeholder={"Where are you going?"} />
+        <TextInput
+          style={styles.input}
+          placeholder={"Where are you going?"}
+          value={input}
+          onChangeText={(text) => setInput(text)}
+        />
       </View>
 
       <FlatList

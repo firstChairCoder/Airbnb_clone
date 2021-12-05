@@ -9,12 +9,21 @@ import {
   StyleSheet,
   Platform,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Fontisto from "react-native-vector-icons/Fontisto";
 
 import { colors } from "../../assets/colors/colors";
 
 const Home = (props) => {
-  const width = useWindowDimensions().width;
+  const windowWidth = useWindowDimensions().width;
+  const navigation = useNavigation()
+
+  const myStyle = () => {
+    return StyleSheet.create({
+      width: windowWidth - 20,
+    });
+  };
+  // console.log(myStyle())
 
   return (
     <View>
@@ -33,8 +42,8 @@ const Home = (props) => {
       </ImageBackground>
 
       <Pressable
-        style={styles.search}
-        onPress={() => console.warn("Search bar pressed.")}
+        style={[myStyle(), styles.search]}
+        onPress={() => navigation.navigate("Location")}
       >
         <Fontisto name={"search"} size={20} color={colors.orange} />
         <Text style={styles.searchText}>Where are you going?</Text>
@@ -72,7 +81,7 @@ const styles = StyleSheet.create({
   },
   search: {
     //   zIndex: 100,
-    width: width - 30,
+    // width: myStyle,
     height: 40,
     justifyContent: "center",
     alignItems: "center",

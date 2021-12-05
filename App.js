@@ -1,26 +1,13 @@
 import React from "react";
-import { Text, View, SafeAreaView, StyleSheet } from "react-native";
+import { Text, View, SafeAreaView, StyleSheet, StatusBar } from "react-native";
 
-// import Home from "./src/components/home";
-// import Post from "./src/components/post";
-// import SearchResults from "./src/screens/searchResults";
-// import SearchLocation from "./src/screens/searchLocation";
-
-import Guests from "./src/screens/guests";
-
-// import Feed from "./src/utils/feed";
-
-// const post1 = Feed[1];
+import Router from "./src/navigation/router";
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      {/* <Home /> */}
-      {/* <Post post={post1} /> */}
-      {/* <SearchResults /> */}
-      {/* <SearchLocation /> */}
-
-      <Guests />
-    </SafeAreaView>
+    <>
+      <StatusBar barStyle={"dark-content"} />
+      <Router />
+    </>
   );
 }
